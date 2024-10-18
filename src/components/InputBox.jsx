@@ -4,6 +4,14 @@ const InputBox = ({label, amountDisable = false, amount, onAmountChange, onCurre
 
     const amountInputId = useId()
 
+    const handleAmountChange = (e) => {
+        const value = e.target.value
+
+        if (value === "" || !isNaN(value)) {
+            onAmountChange(value)
+        }
+    }
+
     return (
         <div
             className={`bg-blue-300 p-3 rounded-lg text-sm flex ${className}`}
@@ -18,14 +26,13 @@ const InputBox = ({label, amountDisable = false, amount, onAmountChange, onCurre
                     {label}
                 </label>
                 <input
-                    type="number"
+                    type="text"
                     id={amountInputId}
                     className='outline-none w-full bg-transparent py-1.5'
                     placeholder='Amount'
                     disabled={amountDisable}
                     value={amount}
-                    onChange={(e) => onAmountChange(Number(e.target.value))}
-                    // when dealing with form inputs in HTML and React, the values are typically treated as strings by default. This means that when you retrieve the value of an input field using e.target.value, it will be returned as a string, even if the user inputs a numeric value.
+                    onChange={handleAmountChange}
                 />
             </div>
             <div

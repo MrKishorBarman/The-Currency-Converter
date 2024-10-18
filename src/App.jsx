@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
 import { InputBox } from './components'
+import CurrencyBg from "./items/CurrencyBg.png"
 
 const App = () => {
 
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState()
   const [from, setFrom] = useState("INR")
   const [to, setTo] = useState("USD")
   const [convertedAmount, setConvertedAmount] = useState('')
@@ -26,9 +27,10 @@ const App = () => {
 
   return (
     <div
-      className='w-full h-screen flex justify-center items-center bg-cover bg-no-repeat'
+      className='w-full h-screen flex justify-center items-center bg-no-repeat'
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`
+        backgroundImage: `url(${CurrencyBg})`,
+        backgroundSize: '99.99% 99.99%'
       }}
     >
       <div
