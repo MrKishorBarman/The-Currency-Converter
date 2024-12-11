@@ -37,7 +37,7 @@ const App = () => {
         className='w-full'
       >
         <div
-          className='max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30'
+          className='max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30 sm:mx-10px'
         >
           <form
             onSubmit={(e) => {
